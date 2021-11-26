@@ -1,0 +1,11 @@
+@model List<OgloszenieKlasowe>
+
+
+@foreach (var ogloszenieKlasowe in Model)
+{
+    <hr/>
+    <p>@ogloszenieKlasowe.Tresc</p>
+    <p>@ogloszenieKlasowe.Klasa</p>
+    <p>@ogloszenieKlasowe.DataDodania</p>
+    <hr/>
+}

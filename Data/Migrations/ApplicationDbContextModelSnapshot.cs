@@ -228,6 +228,20 @@ namespace diario_libruso.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Klasy");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RokPoczatkowy = 2016,
+                            Znak = "3C"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            RokPoczatkowy = 2015,
+                            Znak = "$C"
+                        });
                 });
 
             modelBuilder.Entity("diario_libruso.Models.Ogloszenie", b =>
@@ -236,12 +250,55 @@ namespace diario_libruso.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("DataDodania")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Tresc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tytul")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("Ogloszenia");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Ogloszenie");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 5,
+                            DataDodania = new DateTime(2021, 11, 26, 18, 54, 38, 75, DateTimeKind.Local).AddTicks(6920),
+                            Tresc = "Bardzo wazne",
+                            Tytul = "Wazne!!!"
+                        });
+                });
+
+            modelBuilder.Entity("diario_libruso.Models.OgloszenieKlasowe", b =>
+                {
+                    b.HasBaseType("diario_libruso.Models.Ogloszenie");
+
+                    b.Property<int>("KlasaId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasIndex("KlasaId");
+
+                    b.HasDiscriminator().HasValue("OgloszenieKlasowe");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 6,
+                            DataDodania = new DateTime(2021, 11, 26, 0, 0, 0, 0, DateTimeKind.Local),
+                            Tresc = "Super wazne",
+                            Tytul = "Mega wazne",
+                            KlasaId = 1
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -293,6 +350,17 @@ namespace diario_libruso.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("diario_libruso.Models.OgloszenieKlasowe", b =>
+                {
+                    b.HasOne("diario_libruso.Models.Klasa", "Klasa")
+                        .WithMany()
+                        .HasForeignKey("KlasaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Klasa");
                 });
 #pragma warning restore 612, 618
         }
