@@ -1,0 +1,22 @@
+@model diario_libruso.ViewModels.OgloszenieKlasoweViewModel
+
+@{
+    ViewBag.Title = "Dodawanie ogloszenia klasowego";
+}
+
+@using (Html.BeginForm("Dodaj", "OgloszenieKlasowe"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.OgloszenieKlasowe.Tytul)
+        @Html.TextBoxFor(m => m.OgloszenieKlasowe.Tytul)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OgloszenieKlasowe.Tresc)
+        @Html.TextAreaFor(m => m.OgloszenieKlasowe.Tresc)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OgloszenieKlasowe.Klasa)
+        @Html.DropDownListFor(m => m.OgloszenieKlasowe.KlasaId, new SelectList(Model.Klasy, "Id", "Znak"), "Wybierz Klase")
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+}
