@@ -9,7 +9,5 @@ namespace diario_libruso.Constants
             public const string RODZIC = "Rodzic";
             public const string NAUCZYCIEL = "Nauczyciel";
         }
-        
-        
     }
 }

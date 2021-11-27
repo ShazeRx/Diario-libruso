@@ -1,5 +1,3 @@
-using System;
-
 namespace diario_libruso.Models
 {
     public class ErrorViewModel

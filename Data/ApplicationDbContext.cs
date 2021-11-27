@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using diario_libruso.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -14,6 +13,12 @@ namespace diario_libruso.Data
             : base(options)
         {
         }
+
+        public DbSet<Ogloszenie> Ogloszenia { get; set; }
+        public DbSet<OgloszenieKlasowe> OgloszeniaKlasowe { get; set; }
+        public DbSet<Klasa> Klasy { get; set; }
+
+        public DbSet<Uczen> Uczniowie { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -177,11 +182,5 @@ namespace diario_libruso.Data
 
             base.OnModelCreating(builder);
         }
-
-        public DbSet<Ogloszenie> Ogloszenia { get; set; }
-        public DbSet<OgloszenieKlasowe> OgloszeniaKlasowe { get; set; }
-        public DbSet<Klasa> Klasy { get; set; }
-
-        public DbSet<Uczen> Uczniowie { get; set; }
     }
 }
