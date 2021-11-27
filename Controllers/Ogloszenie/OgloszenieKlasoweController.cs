@@ -1,10 +1,13 @@
 using System.Linq;
 using diario_libruso.Data;
 using diario_libruso.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static diario_libruso.Constants.Constants;
 
 namespace diario_libruso.Controllers.Ogloszenie
 {
+    [Authorize(Roles = Rola.RODZIC)]
     public class OgloszenieKlasoweController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +23,7 @@ namespace diario_libruso.Controllers.Ogloszenie
             var ogloszenia = _context.OgloszeniaKlasowe.ToList();
             return View(ogloszenia);
         }
+
         public IActionResult Dodaj()
         {
             var klasy = _context.Klasy.ToList();
@@ -29,6 +33,7 @@ namespace diario_libruso.Controllers.Ogloszenie
             };
             return View(ogloszenieKlasoweViewModel);
         }
+
         [HttpPost]
         public IActionResult Dodaj(OgloszenieKlasoweViewModel viewModel)
         {
@@ -38,7 +43,8 @@ namespace diario_libruso.Controllers.Ogloszenie
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Index","OgloszenieKlasowe");
+
+            return RedirectToAction("Index", "OgloszenieKlasowe");
         }
     }
 }

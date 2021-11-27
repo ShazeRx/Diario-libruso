@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace diario_libruso.Models
@@ -11,5 +12,7 @@ namespace diario_libruso.Models
         public string Znak { get; set; }
 
         public int RokPoczatkowy { get; set; }
+
+        public ICollection<Uczen> Uczniowie { get; set; }
     }
 }
