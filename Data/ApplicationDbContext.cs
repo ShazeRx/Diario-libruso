@@ -19,6 +19,10 @@ namespace diario_libruso.Data
         public DbSet<Klasa> Klasy { get; set; }
 
         public DbSet<Uczen> Uczniowie { get; set; }
+        public DbSet<Przedmiot> Przedmioty { get; set; }
+
+        public DbSet<ListaPrzedmiotow> ListyPrzedmiotow { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -38,7 +42,7 @@ namespace diario_libruso.Data
                 new Klasa
                 {
                     Id = 2,
-                    Znak = "$C",
+                    Znak = "",
                     RokPoczatkowy = 2015
                 });
 
@@ -100,7 +104,7 @@ namespace diario_libruso.Data
                 new IdentityUser
                 {
                     Id = "e445865-a24d-6543-a6c6-9443d048cab9",
-                    UserName = RODZIC_USERNAME,
+                    UserName = NAUCZYCIEL_USERNAME,
                     NormalizedUserName = NAUCZYCIEL_USERNAME.ToUpper(),
                     PasswordHash = hasher.HashPassword(null, "password")
                 });
@@ -135,7 +139,7 @@ namespace diario_libruso.Data
                 Id = "2c5e174e-3b0e-446f-86af-483d56fd7212", Name = Rola.RODZIC, NormalizedName = Rola.RODZIC.ToUpper()
             });
 
-            //Rola rodzica
+            //Rola nauczyciela
             builder.Entity<IdentityRole>().HasData(new IdentityRole
             {
                 Id = "2c5e174e-3b0e-446f-86af-483d56fd7213", Name = Rola.NAUCZYCIEL,

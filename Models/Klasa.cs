@@ -13,6 +13,8 @@ namespace diario_libruso.Models
 
         public int RokPoczatkowy { get; set; }
 
-        public ICollection<Uczen> Uczniowie { get; set; }
+        public virtual ICollection<Uczen> Uczniowie { get; set; }
+
+        public virtual ListaPrzedmiotow ListaPrzedmiotow { get; set; }
     }
 }
