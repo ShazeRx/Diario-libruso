@@ -1,0 +1,9 @@
+@model List<ListaPrzedmiotow>
+
+@foreach (var listaPrzedmiotow in Model)
+{
+    <hr/>
+    <p>@listaPrzedmiotow.Nazwa</p>
+    <p>@listaPrzedmiotow.Klasa.Znak</p>
+    <hr/>
+}

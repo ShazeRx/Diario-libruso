@@ -1,0 +1,13 @@
+@model List<Przedmiot>
+
+
+@foreach (var przedmiot in @Model)
+{
+    <hr/>
+    <hr/>
+    <p>@przedmiot.Nazwa</p>
+    <p>@przedmiot.Opis</p>
+    <p>@przedmiot.Nauczyciel.UserName</p>
+    <hr/>
+    <hr/>
+}
