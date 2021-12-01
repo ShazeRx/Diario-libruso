@@ -1,0 +1,22 @@
+@model diario_libruso.ViewModels.ListaPrzedmiotowViewModel
+
+@{
+    ViewBag.Title = "Dodawanie listy przedmiotow";
+}
+
+@using (Html.BeginForm("Dodaj", "ListaPrzedmiotow"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ListaPrzedmiotow.Nazwa)
+        @Html.TextBoxFor(m => m.ListaPrzedmiotow.Nazwa)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ListaPrzedmiotow.Przedmioty)
+        @Html.ListBoxFor(m => m.ListaPrzedmiotow.Przedmioty, @Model.Przedmioty)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ListaPrzedmiotow.Klasa)
+        @Html.DropDownListFor(m => m.ListaPrzedmiotow.KlasaId, new SelectList(Model.Klasy, "Id", "Znak"), "Wybierz Klase")
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+}

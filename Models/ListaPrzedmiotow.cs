@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace diario_libruso.Models
 {
@@ -8,8 +9,10 @@ namespace diario_libruso.Models
 
         public string Nazwa { get; set; }
 
-        public ICollection<Przedmiot> Przedmioty { get; set; }
+        public virtual ICollection<Przedmiot> Przedmioty { get; set; }
 
-        public ICollection<Klasa> Klasy { get; set; }
+        [ForeignKey("Klasa")] public int KlasaId { get; set; }
+
+        public virtual Klasa Klasa { get; set; }
     }
 }

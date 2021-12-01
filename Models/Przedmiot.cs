@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
@@ -14,5 +15,7 @@ namespace diario_libruso.Models
         [ForeignKey("Nauczyciel")] public string IdNauczyciela { get; set; }
 
         public virtual IdentityUser Nauczyciel { get; set; }
+
+        public virtual ICollection<ListaPrzedmiotow> ListaPrzedmiotow { get; set; }
     }
 }
