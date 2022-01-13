@@ -1,0 +1,20 @@
+@model diario_libruso.ViewModels.NowaKlasaViewModel
+
+@{
+    ViewBag.Title = "Dodawanie klasy";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm("Zapisz", "Klasa"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Klasa.Znak)
+        @Html.TextBoxFor(m => m.Klasa.Znak)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Klasa.RokPoczatkowy)
+        @Html.TextBoxFor(m => m.Klasa.RokPoczatkowy)
+    </div>
+    @Html.HiddenFor(m => m.Klasa.Id)
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+}

@@ -1,0 +1,24 @@
+@model diario_libruso.ViewModels.NowyRodzicViewModel
+@{
+    ViewBag.Title = "Nowy Rodzic";
+    Layout = "_Layout";
+}
+
+<h2>Nowy Nauczyciel</h2>
+
+@using (Html.BeginForm("Zapisz", "Rodzic"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Rodzic.Imie)
+        @Html.TextBoxFor(m => m.Rodzic.Imie)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Rodzic.Nazwisko)
+        @Html.TextBoxFor(m => m.Rodzic.Nazwisko)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Rodzic.UczenId)
+        @Html.DropDownListFor(m => m.Rodzic.UczenId, new SelectList(Model.Uczniowie, "Id", "Imie"), "Wybierz dziecko/ucznia: ")
+    </div>
+    <button type="submit" class="btn-primary">Zapisz</button>
+}

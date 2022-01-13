@@ -1,9 +1,24 @@
 @model List<Klasa>
 
-@foreach (var klasa in Model)
-{
-    <hr/>
-    <p>@klasa.Znak</p>
-    <p>@klasa.RokPoczatkowy</p>
-    <hr/>
-}
+<h2>Lista Klas</h2>
+<p>
+    @Html.ActionLink("Nowa Klasa", "NowaKlasa", "Klasa", null, new {@class= "btn btn-primary"})
+</p>
+
+<table id="klasy" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Znak Klasy</th>
+        <th>Rok Początkowy</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var klasa in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(klasa.Znak, "Edit", "Klasa", new{id = klasa.Id})</td>
+            <td>@klasa.RokPoczatkowy</td>
+        </tr>
+    }
+    </tbody>
+</table>

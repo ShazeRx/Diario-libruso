@@ -1,0 +1,24 @@
+@model diario_libruso.ViewModels.NowyUczenViewModel
+@{
+    ViewBag.Title = "Nowy Uczeń";
+    Layout = "_Layout";
+}
+
+<h2>Nowy Uczeń</h2>
+
+@using (Html.BeginForm("Zapisz", "Uczen"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Uczen.Imie)
+        @Html.TextBoxFor(m => m.Uczen.Imie)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Uczen.Nazwisko)
+        @Html.TextBoxFor(m => m.Uczen.Nazwisko)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Uczen.KlasaId)
+        @Html.DropDownListFor(m => m.Uczen.KlasaId, new SelectList(Model.Klasy, "Id", "Znak"), "Wybierz Klasę: ")
+    </div>
+    <button type="submit" class="btn-primary">Zapisz</button>
+}

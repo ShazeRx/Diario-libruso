@@ -1,0 +1,22 @@
+@model List<Przedmiot>
+
+<h2>Przedmioty</h2>
+<p>
+    @Html.ActionLink("Nowy Przedmiot", "NowyPrzedmiot", "Przedmiot", null, new { @class = "btn btn-primary" })
+</p>
+
+<table id="przedmioty" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Nazwa Przedmiotu</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var przedmiot in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(przedmiot.Nazwa, "Edit", "Przedmiot", new{id = przedmiot.Id})</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -7,17 +7,45 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.12"/>
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12"/>
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.12"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.12"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12"/>
-        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2"/>
+        <PackageReference Include="EntityFramework" Version="6.4.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.12" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.12" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.12" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Data\Migrations\20220112182257_Nauczyciele.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112181410_Naprawa.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112181748_Fixed.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112182912_nap.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112182257_Nauczyciele.cs" />
+      <Compile Remove="Data\Migrations\20220112181410_Naprawa.cs" />
+      <Compile Remove="Data\Migrations\20220112181748_Fixed.cs" />
+      <Compile Remove="Data\Migrations\20220112182912_nap.cs" />
+      <Compile Remove="Data\Migrations\20220112181007_Naprawa.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112181007_Naprawa.cs" />
+      <Compile Remove="Data\Migrations\20220112174604_Fixing.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112175442_fiks.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112174604_Fixing.cs" />
+      <Compile Remove="Data\Migrations\20220112175442_fiks.cs" />
+      <Compile Remove="Data\Migrations\20220112172806_SomeChangess.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112171629_SomeChanges.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112165758_Changes.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112155502_Subject.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112174156_Fix.Designer.cs" />
+      <Compile Remove="Data\Migrations\20220112172806_SomeChangess.cs" />
+      <Compile Remove="Data\Migrations\20220112171629_SomeChanges.cs" />
+      <Compile Remove="Data\Migrations\20220112165758_Changes.cs" />
+      <Compile Remove="Data\Migrations\20220112155502_Subject.cs" />
+      <Compile Remove="Data\Migrations\20220112174156_Fix.cs" />
     </ItemGroup>
 
 </Project>

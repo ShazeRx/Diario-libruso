@@ -1,8 +1,33 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Authorization
+@{
     ViewData["Title"] = "Home Page";
+    Layout = ViewBag.Layout;
 }
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class ="themeSwitcher">
+        @Html.ActionLink("Light", "index",
+            new {layout = "layout1"})&nbsp;
+        /
+        @Html.ActionLink("Dark", "index",
+            new {layout = "layout2"})
+    </div>
+    <h1 class="display-4">Witamy w dzienniku szkolnym</h1>
+    <br />
+</div>
+<div class="content">
+    @{
+        if (User.IsInRole("Administrator"))
+        {
+            <div class="tile1"><a class="menuLink" asp-area="" asp-controller="Klasa" asp-action="">Wiadomości</a></div>
+            <div class="tile2"><a asp-area="" asp-controller="Ogloszenie" asp-action="">Ogłoszenia</a></div>
+            <div class="tile3"><a asp-area="" asp-controller="Klasa" asp-action="">Klasy</a></div>
+            <div class="tile4">Egzaminy</div>
+            <div style="clear:both;"></div>
+        }
+        if (User.IsInRole("Nauczyciel"))
+        {
+            <div class="tile2"><a asp-area="" asp-controller="Ogloszenie" asp-action="">Ogłoszenia</a></div>
+            <div class="tile3"><a asp-area="" asp-controller="Klasa" asp-action="">Klasy</a></div>
+        }
+    }
 </div>
