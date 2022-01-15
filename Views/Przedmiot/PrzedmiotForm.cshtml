@@ -1,0 +1,16 @@
+@model diario_libruso.ViewModels.NowyPrzedmiotViewModel
+@{
+    ViewBag.Title = "Nowy Przedmiot";
+    Layout = "_Layout";
+}
+
+<h2>Nowy Przedmiot</h2>
+
+@using (Html.BeginForm("Zapisz", "Przedmiot"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Przedmiot.Nazwa)
+        @Html.TextBoxFor(m => m.Przedmiot.Nazwa)
+    </div>
+    <button type="submit" class="btn-primary">Zapisz</button>
+}

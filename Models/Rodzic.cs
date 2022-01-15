@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace diario_libruso.Models
 {
-    public class Uczen
+    public class Rodzic
     {
         public int Id { get; set; }
 
@@ -11,15 +13,14 @@ namespace diario_libruso.Models
 
         public virtual IdentityUser User { get; set; }
 
-        private int maxNumer = 35;
         public string Imie { get; set; }
         
         public string Nazwisko { get; set; }
 
-        public int NumerDziennika { get; set; }
+        public List<Uczen> uczniowie = new List<Uczen>();
+        
+        [ForeignKey("Uczen")] public int UczenId { get; set; }
 
-        [ForeignKey("Klasa")] public int KlasaId { get; set; }
-
-        public virtual Klasa Klasa { get; set; }
+        public virtual Uczen Uczen { get; set; }
     }
 }

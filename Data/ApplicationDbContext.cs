@@ -17,8 +17,10 @@ namespace diario_libruso.Data
         public DbSet<Ogloszenie> Ogloszenia { get; set; }
         public DbSet<OgloszenieKlasowe> OgloszeniaKlasowe { get; set; }
         public DbSet<Klasa> Klasy { get; set; }
-
         public DbSet<Uczen> Uczniowie { get; set; }
+        public DbSet<Nauczyciel> Nauczyciele { get; set; }
+        public DbSet<Rodzic> Rodzice { get; set; }
+        public DbSet<Przedmiot> Przedmioty { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -110,6 +112,8 @@ namespace diario_libruso.Data
                 new Uczen
                 {
                     Id = 87,
+                    Imie = "Daniel",
+                    Nazwisko = "Obajtek",
                     IdentityUserId = "e445865-a24d-6543-a6c6-9443d048cdb9",
                     KlasaId = 1,
                     NumerDziennika = 2
@@ -135,7 +139,7 @@ namespace diario_libruso.Data
                 Id = "2c5e174e-3b0e-446f-86af-483d56fd7212", Name = Rola.RODZIC, NormalizedName = Rola.RODZIC.ToUpper()
             });
 
-            //Rola rodzica
+            //Rola nauczyciela
             builder.Entity<IdentityRole>().HasData(new IdentityRole
             {
                 Id = "2c5e174e-3b0e-446f-86af-483d56fd7213", Name = Rola.NAUCZYCIEL,

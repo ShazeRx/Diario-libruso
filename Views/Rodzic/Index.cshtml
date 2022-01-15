@@ -1,0 +1,24 @@
+@model List<Rodzic>
+
+<h2>Rodzice</h2>
+<p>
+    @Html.ActionLink("Nowy Rodzic", "NowyRodzic", "Rodzic", null, new { @class = "btn btn-primary" })
+</p>
+
+<table id="rodzice" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Rodzic</th>
+        <th>Dzieci</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var rodzic in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(rodzic.Imie, "Edit", "rodzic", new{id = rodzic.Id})</td>
+            <td>@rodzic.UczenId</td>
+        </tr>
+    }
+    </tbody>
+</table>

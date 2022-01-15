@@ -18,8 +18,15 @@ namespace diario_libruso.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string layout)
         {
+            if (layout == "layout1")
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+            else if (layout == "layout2")
+                ViewBag.Layout = "~/Views/Shared/_LayoutDark.cshtml";
+            else
+                ViewBag.Layout = "~/Views/Shared/_Layout.cshtml";
+            
             return View();
         }
 

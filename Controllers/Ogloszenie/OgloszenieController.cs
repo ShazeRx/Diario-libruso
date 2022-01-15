@@ -1,11 +1,13 @@
 using System.Linq;
 using diario_libruso.Data;
 using diario_libruso.Role;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static diario_libruso.Constants.Constants;
 
 namespace diario_libruso.Controllers.Ogloszenie
 {
-    [WszyscyZalogowani]
+    [Authorize(Roles = Rola.NAUCZYCIEL)]
     public class OgloszenieController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,11 +22,6 @@ namespace diario_libruso.Controllers.Ogloszenie
         {
             var ogloszenia = _context.Ogloszenia.ToList();
             return View(ogloszenia);
-        }
-
-        public IActionResult Dodaj()
-        {
-            return View();
         }
 
         [HttpPost]

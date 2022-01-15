@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using diario_libruso.Data;
 
-namespace diario_libruso.Data.Migrations
+namespace diario_libruso.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220112184315_Nowe")]
+    partial class Nowe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,28 +47,28 @@ namespace diario_libruso.Data.Migrations
                         new
                         {
                             Id = "2c5e174e-3b0e-446f-86af-483d56fd7210",
-                            ConcurrencyStamp = "6acd311d-7713-48de-96af-ec1ca38c2f26",
+                            ConcurrencyStamp = "4e376d92-46b4-4c9d-8b4a-a28cb1dd242b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "2c5e174e-3b0e-446f-86af-483d56fd7211",
-                            ConcurrencyStamp = "b8ac0721-142a-4145-b83f-14e6bc0ff53a",
+                            ConcurrencyStamp = "4bb2aa13-2ffe-4cfa-a0b7-706e7fd60cfc",
                             Name = "Uczen",
                             NormalizedName = "UCZEN"
                         },
                         new
                         {
                             Id = "2c5e174e-3b0e-446f-86af-483d56fd7212",
-                            ConcurrencyStamp = "a814eb1e-0183-4b78-b264-fc2332b85131",
+                            ConcurrencyStamp = "0b9e4369-52e9-4d11-97ef-b0652eb7c1be",
                             Name = "Rodzic",
                             NormalizedName = "RODZIC"
                         },
                         new
                         {
                             Id = "2c5e174e-3b0e-446f-86af-483d56fd7213",
-                            ConcurrencyStamp = "f75160ba-b9e6-478e-90dc-5fd1e7cfac24",
+                            ConcurrencyStamp = "d3d63ce5-4a0a-41f3-90b3-1481cffaf6ef",
                             Name = "Nauczyciel",
                             NormalizedName = "NAUCZYCIEL"
                         });
@@ -163,13 +165,13 @@ namespace diario_libruso.Data.Migrations
                         {
                             Id = "e445865-a24d-4543-a6c6-9443d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "766d79c6-8cd1-4764-84fa-a9f32b9ee1a3",
+                            ConcurrencyStamp = "bf017bee-6527-4913-aaa5-769da7434864",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPja7p9d1fCXIovZBb2WlOySuOcG7wQ9m+PDR2S9yNLB9ZxuDcHVxWTuXptUboJK/Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELSAHEbe6AnZMGHwqvv9KuFdsG1GgIhhp/tVxJ/tOyI40Wit+oHdxVI8MD6M7wEk2w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cd600f59-31c0-4416-875e-3c67fc2cc4a1",
+                            SecurityStamp = "748ce43c-82e4-4ab4-a416-c075d018432a",
                             TwoFactorEnabled = false,
                             UserName = "admin@email.com"
                         },
@@ -177,13 +179,13 @@ namespace diario_libruso.Data.Migrations
                         {
                             Id = "e445865-a24d-4543-a6c6-9443d038cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "71ca965d-5d25-4a7a-afa7-8043154a6335",
+                            ConcurrencyStamp = "87780481-8d24-401e-86e2-1d303d3b970a",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "RODZIC@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENi9+1CXRReFLClC+PzEhKA5FH+GRPslIgCItP6V8D61SY3I36obQn7Fx+SrhcrjeA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJG573TMylZYXVkxYwnicyklkrwWmEJFt7lqXOroa5xTq1LPtAyQRMn+4QBvfJgSuQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6752e31a-4920-4059-93bd-88c136098ce5",
+                            SecurityStamp = "a85ef4bf-634b-4c89-b280-9ed9089f740a",
                             TwoFactorEnabled = false,
                             UserName = "rodzic@email.com"
                         },
@@ -191,13 +193,13 @@ namespace diario_libruso.Data.Migrations
                         {
                             Id = "e445865-a24d-6543-a6c6-9443d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0566ac43-e44f-4b4f-9d1b-83a72e8bfeff",
+                            ConcurrencyStamp = "6bea1018-a395-40d0-a514-8a19fe1a0ca2",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "UCZEN@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJenFd6GAaipjp8rxdeS4BgGXQxwk8ZN7qucw6V2LmxtRd3PTZwomO5GBlDuBBY8Lg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOdQmyNzmvVo5vgbJvitGa7uk+5Z3ULgxony9oA8ReafdCie1RHrmOrriU8yyamSnw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "00385dcd-03ae-4188-830a-70b9e37e6eef",
+                            SecurityStamp = "10255250-596e-4f1c-ae8e-513e6a064527",
                             TwoFactorEnabled = false,
                             UserName = "uczen@email.com"
                         },
@@ -205,13 +207,13 @@ namespace diario_libruso.Data.Migrations
                         {
                             Id = "e445865-a24d-6543-a6c6-9443d048cab9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "052cd717-083a-4be1-b748-68591b7fa03d",
+                            ConcurrencyStamp = "fe7a0c2a-8777-4054-9e29-8971f143f256",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "NAUCZYCIEL@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELJTSXF+/5zU0akVJj6J1hnYmGWfZ7f+vxVLoB7KjyY8W1r4fc1qSV8TrUyjHcsf+w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMwd7UfZtLE3OnLh4uE7747aInmbPKgu4OxBRazIKlIvdC5VfYoGcO+X+fzi8XkqqQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a1417089-436a-4773-bfcd-1816236df043",
+                            SecurityStamp = "1c45dae6-9649-4260-877c-6aa576e731e9",
                             TwoFactorEnabled = false,
                             UserName = "rodzic@email.com"
                         });
@@ -410,7 +412,7 @@ namespace diario_libruso.Data.Migrations
                         new
                         {
                             Id = 5,
-                            DataDodania = new DateTime(2022, 1, 12, 19, 46, 5, 978, DateTimeKind.Local).AddTicks(160),
+                            DataDodania = new DateTime(2022, 1, 12, 19, 43, 14, 507, DateTimeKind.Local).AddTicks(3980),
                             Tresc = "Bardzo wazne",
                             Tytul = "Wazne!!!"
                         });
